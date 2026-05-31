@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - G6 Car Wash Membership</title>
+    <title>Login - G6 Car Wash Member</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -16,46 +16,47 @@
         }
 
         body {
-            background-color: #0f172a;
+            background-color: #0f172a; 
             color: #f8fafc;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh; 
-            padding: 20px;
         }
-        .register-container {
-            background-color: #1e293b;
+
+        .login-container {
+            background-color: #1e293b; 
             width: 100%;
-            max-width: 440px; 
+            max-width: 420px;
             padding: 40px 30px;
             border-radius: 12px;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
             border: 1px solid #334155;
         }
 
-        .register-header {
+        .login-header {
             text-align: center;
             margin-bottom: 30px;
         }
 
-        .register-header h2 {
+        .login-header h2 {
             font-size: 28px;
             color: #fff;
             margin-bottom: 8px;
         }
 
-        .register-header h2 span {
-            color: #38bdf8; 
+        .login-header h2 span {
+            color: #38bdf8;
         }
 
-        .register-header p {
+        .login-header p {
             color: #94a3b8;
             font-size: 14px;
-            line-height: 1.4;
         }
+
         .form-group {
             margin-bottom: 20px;
+            position: relative;
         }
 
         .form-group label {
@@ -95,11 +96,37 @@
             border-color: #38bdf8;
             box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
         }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #94a3b8;
+            cursor: pointer;
+        }
+
+        .forgot-pass {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .forgot-pass:hover {
+            text-decoration: underline;
+        }
+
         .btn-submit {
             width: 100%;
             background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
             color: #fff;
-            padding: 13px;
+            padding: 12px;
             border: none;
             border-radius: 8px;
             font-size: 16px;
@@ -107,14 +134,14 @@
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
             transition: all 0.3s;
-            margin-top: 10px;
         }
 
         .btn-submit:hover {
             opacity: 0.9;
             transform: translateY(-1px);
         }
-        .login-redirect {
+
+        .register-redirect {
             text-align: center;
             margin-top: 25px;
             padding-top: 20px;
@@ -123,7 +150,7 @@
             color: #94a3b8;
         }
 
-        .login-redirect a {
+        .register-redirect a {
             color: #38bdf8;
             text-decoration: none;
             font-weight: 600;
@@ -131,7 +158,7 @@
             transition: color 0.2s;
         }
 
-        .login-redirect a:hover {
+        .register-redirect a:hover {
             color: #0ea5e9;
             text-decoration: underline;
         }
@@ -139,36 +166,20 @@
 </head>
 <body>
 
-    <div class="register-container">
+    <div class="login-container">
         
-        <div class="register-header">
-            <h2>JOIN <span>G6 CARWASH MEMBERSHIP</span></h2>
-            <p>Get your first wash FREE & start earning points now!</p>
+        <div class="login-header">
+            <h2>G6 <span>CARWASH</span></h2>
+            <p>Login to earn points and more!</p>
         </div>
 
-       <form action="RegisterController" method="POST">
+        <form action="LoginController" method="POST">
             
             <div class="form-group">
-                <label for="fullName">Full Name</label>
+                <label for="username">Email</label>
                 <div class="input-box">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <div class="input-box">
-                    <i class="fa-solid fa-phone"></i>
-                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <div class="input-box">
-                    <i class="fa-solid fa-envelope"></i>
-                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                    <input type="text" id="username" name="username" placeholder="Enter your emsil" required>
                 </div>
             </div>
 
@@ -176,17 +187,17 @@
                 <label for="password">Password</label>
                 <div class="input-box">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" id="password" name="password" placeholder="Minimum 6 characters" required>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
             </div>
 
-            <button type="submit" class="btn-submit">Create Free Account</button>
+            <button type="submit" class="btn-submit">Log in</button>
             
         </form>
 
-        <div class="login-redirect">
-            Already have an account? 
-            <a href="login_page.jsp">Sign In here</a>
+        <div class="register-redirect">
+            Don't have a member account yet?
+            <a href="register_page.jsp">Sign up here</a>
         </div>
 
     </div>
